@@ -13,4 +13,4 @@ The bot will return any number of collectibles for a given wallet on Ethereum or
 
 The `getEthereumCollectibles` and similar functions rely on a deprecated version of the openSeaAPI and this has broken their functionality. [Source](https://docs.opensea.io/v1.0/changelog/api-v2-fully-supported)
 
-I've implemented the latest version of the openSeaAPI with a `fetch` call to achieve this functionality. The relevant `fetch-nft` code is commented out in `index.js` lines 79-84
+I've implemented the latest version of the `openSeaAPI` with `fetch` to achieve this functionality. The relevant `fetch-nft` code is commented out in `index.js` lines 79-84
