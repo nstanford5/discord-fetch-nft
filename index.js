@@ -122,10 +122,8 @@ client.on('interactionCreate', async interaction => {
                   `Contract: ${nums[i].contract}\n` +
                   `Image URL: ${nums[i].image_url}\n`);
     }
-  }
+  }//end of 'wallet-eth' handler
   if(interaction.customId === 'wallet-sol'){
-    // // modal expects a response, defer
-    // interaction.deferUpdate();
     
     const wallet = interaction.fields.getTextInputValue('address');
     const { FetchNFTClient } = await import('@audius/fetch-nft');
@@ -150,7 +148,7 @@ client.on('interactionCreate', async interaction => {
       await interaction.followUp(`Name: ${nums[i].name}\n` +
             `Token ID: ${nums[i].tokenId}\n` +
             `Description: ${nums[i].description}\n`);
-    }// end of for
+    }
   }//end of 'wallet-sol' handler
 })
 

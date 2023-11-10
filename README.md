@@ -1,14 +1,16 @@
-## MomentumAI
+## Fetch the NFT bot
 
-All new commands must be registered. To register a new slash command,
-run the `deploy-commands.js` file before launching the bot.
+This repository implements a Discord bot with the `fetch-nft` library from Audius. It will allow you to pass in an ETH or SOL wallet and be returned the user's collectibles.
 
-```cmd
-$ node deploy-commands.js
-$ node index.js
-```
+# Usage
+`/fetch` launch the fetch NFT tool
+  - Then select ETH or SOL network and input appropriate wallet address
+  - The UI will not allow you to input the incorrect wallet length
 
-We may set this up to run as a CRON job on the server at a regular interval (TBD)
+The bot will return any number of collectibles for a given wallet on Ethereum or Solana networks.
 
+# Workarounds
 
-`interactionCreate.js` logs the activity of the bot and the user interaction. This should point to a "backstage" channel, where moderators can monitor the activity of the bot right in the Discord server.
+The `getEthereumCollectibles` and similar functions rely on a deprecated version of the openSeaAPI and this has broken their functionality.
+
+I've implemented the latest version of the openSeaAPI with a `fetch` call to achieve this functionality. The relevant `fetch-nft` code is commented out in `index.js` lines 79-84
